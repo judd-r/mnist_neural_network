@@ -12,6 +12,9 @@ jupyter
 matplotlib
 tensorflow
 
+# visualise
+streamlit
+
 # tests/linter
 black
 coverage
