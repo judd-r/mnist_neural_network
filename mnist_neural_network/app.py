@@ -1,6 +1,5 @@
 import streamlit as st
 import numpy as np
-import json
 import requests
 import matplotlib.pyplot as plt
 
@@ -9,15 +8,28 @@ URI = 'http://127.0.0.1:5000/' #currently my model server
 st.set_option('deprecation.showPyplotGlobalUse', False)
 #st.get_option('theme.backgroundColor')
 
-st.title('MNIST – ML prediction')
-st.subheader('Visualising hidden layers')
+st.title('MNIST dataset – ML prediction')
+st.subheader('Visualising hidden layers in a CNN')
+st.sidebar.write("")
 st.sidebar.markdown("<h2 style='text-align: center;'>Image input</h2>",
                     unsafe_allow_html=True)  # make sidebar fixed later
 
+st.markdown("""
+<style>
+div.stButton > button:first-child {
+    background-color: rgba(247, 67, 249, 0.8);
+    color: rgba(7, 7, 7, 0.9);
+}
+</style>""",
+            unsafe_allow_html=True)
+
+
+def reversed_enumerate(a_list):
+    return zip(range(len(a_list) - 1, -1, -1), a_list[::-1])
+
+
 if st.button('Get random image'):
-    response = requests.post(URI, data={})
-    #st.markdown(response.data)
-    response = json.loads(response.text)
+    response = requests.post(URI, data={}).json()
     preds = response.get('prediction')
     image = response.get('image')
     image = np.reshape(image, (28, 28))
@@ -32,13 +44,19 @@ if st.button('Get random image'):
 
     with col3:
         st.write("")
-    #st.sidebar.image(image, width=200)
 
-    for layer, pred in enumerate(preds):
+    def layer_text(layer):
+        if layer == len(preds) - 1: # reversing order below
+            return "Prediction"
+        else:
+            return "Hidden layer"
+
+
+    for layer, pred in reversed_enumerate(preds):
         numbers = np.squeeze(np.array(pred)) # removes additional dimensionality of the data
 
         plt.figure(figsize=(32, 4))
-        if layer == 2: # my final layer
+        if layer == preds[-1]: # final output layer
             row = 1
             col = 10
         else:
@@ -57,5 +75,5 @@ if st.button('Get random image'):
         plt.subplots_adjust(wspace=0.05, hspace=0.05)
         plt.tight_layout()
 
-        st.text(f'Layer {layer + 1} (colour range: black == 0, white == 1')
+        st.text(f'{layer_text(layer)} – Layer {layer + 1}')
         st.pyplot()
