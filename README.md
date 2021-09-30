@@ -4,7 +4,6 @@
 - Data Source:
 - Type of analysis:
 
-Please document the project the better you can.
 
 # Startup the project
 
@@ -22,20 +21,7 @@ Unittest test:
 make clean install test
 ```
 
-Check for mnist_neural_network in gitlab.com/{group}.
-If your project is not set please add it:
-
-- Create a new project on `gitlab.com/{group}/mnist_neural_network`
-- Then populate it:
-
-```bash
-##   e.g. if group is "{group}" and project_name is "mnist_neural_network"
-git remote add origin git@github.com:{group}/mnist_neural_network.git
-git push -u origin master
-git push -u origin --tags
-```
-
-Functionnal test with a script:
+Functional test with a script:
 
 ```bash
 cd
@@ -63,12 +49,4 @@ git clone git@github.com:{group}/mnist_neural_network.git
 cd mnist_neural_network
 pip install -r requirements.txt
 make clean install test                # install and test
-```
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-mnist_neural_network-run
 ```

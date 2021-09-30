@@ -9,7 +9,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 #st.get_option('theme.backgroundColor')
 
 st.title('MNIST dataset – ML prediction')
-st.subheader('Visualising hidden layers in a CNN')
+st.subheader('Visualising hidden layers in a Neural Network')
 st.sidebar.write("")
 st.sidebar.markdown("<h2 style='text-align: center;'>Image input</h2>",
                     unsafe_allow_html=True)  # make sidebar fixed later
@@ -17,7 +17,7 @@ st.sidebar.markdown("<h2 style='text-align: center;'>Image input</h2>",
 st.markdown("""
 <style>
 div.stButton > button:first-child {
-    background-color: rgba(247, 67, 249, 0.8);
+    background-color: rgba(252, 203, 3, 0.77);
     color: rgba(7, 7, 7, 0.9);
 }
 </style>""",
@@ -41,6 +41,8 @@ if st.button('Get random image'):
 
     with col2:
         st.image(image, width=150)
+        st.write('The MNIST database contains 70,000 images of handwritten digits'
+                    ' from 1 to 10.')
 
     with col3:
         st.write("")
