@@ -12,8 +12,9 @@ jupyter
 matplotlib
 tensorflow-cpu
 
-# visualise
+# visualisation, server
 streamlit
+gunicorn
 
 # tests/linter
 #black

@@ -1,8 +1,5 @@
-# Data analysis
-- Document here the project: mnist_neural_network
-- Description: Project Description
-- Data Source:
-- Type of analysis:
+web: sh setup.sh && streamlit run app.py
+From Procfile, old version
 
 
 # Startup the project
