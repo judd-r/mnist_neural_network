@@ -1,7 +1,6 @@
-Procfile, original version
-web: sh setup.sh && streamlit run app.py
 
-Procfile, gunicorn version (because I don't want to run a local server)
+
+Procfile, gunicorn version (because I don't want to run a local server - but turns out Streamlit doesn't support WSGI like gunicorn)
 web: gunicorn ml_server:app
 
 # Startup the project
