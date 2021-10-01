@@ -1,6 +1,8 @@
+Procfile, original version
 web: sh setup.sh && streamlit run app.py
-From Procfile, old version
 
+Procfile, gunicorn version (because I don't want to run a local server)
+web: gunicorn ml_server:app
 
 # Startup the project
 
