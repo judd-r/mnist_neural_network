@@ -14,7 +14,6 @@ tensorflow-cpu
 
 # visualisation, server
 streamlit
-gunicorn
 
 # tests/linter
 #black
