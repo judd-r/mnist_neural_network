@@ -5,7 +5,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-# 'normal' model that outputs just the final layer
+# simple model that outputs just the final layer
 model = tf.keras.models.load_model('mnist_model.h5')
 
 model_all_layers = tf.keras.models.Model(
