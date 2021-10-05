@@ -17,3 +17,7 @@ Attribution: Coursera guided project by Amit Yadav
 
 
 # Setup and install
+
+Run the project:
+CLI: python ml_server.py
+      streamlit run app.py
