@@ -1,5 +1,5 @@
 # packaging
-pip>=9
+pip>=20
 setuptools>=26
 twine
 wheel>=0.29
@@ -12,21 +12,14 @@ jupyter
 matplotlib
 tensorflow-cpu
 
-# visualisation, server
+# visualisation, web server
 streamlit
 
 # tests/linter
-#black
-#coverage
-#flake8
 pytest
-#yapf
 
 # API
-#gcsfs
-#google-cloud-storage
 mlflow
-#s3fs
 
 # utilities
 six>=1.14
