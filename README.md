@@ -1,19 +1,25 @@
 # Project description
-Link: xxx
+Project deployed at https://mnist-neural-network.herokuapp.com/
+
 
 This project visualises all layers of a Tensorflow Neural Network model predicting handwritten digits from the MNIST dataset.
 
 
 Stack:
 Python, Jupyter
-Flask
-Streamlit
-Git
+Flask,
+Streamlit,
+Git,
 Heroku
 
 
-
-Attribution: Coursera guided project by Amit Yadav
+<br>
+Attribution:
+<br> This project expands on a Coursera guided project by Amit Yadav
+<br> Changes I made:
+- packaging and deployment
+- CI/CD
+- visualisation
 
 
 # Setup and install

@@ -10,6 +10,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 st.title('MNIST dataset – ML prediction')
 st.subheader('Visualising hidden layers in a Neural Network')
+
 st.sidebar.write("")
 st.sidebar.markdown("<h2 style='text-align: center;'>Image input</h2>",
                     unsafe_allow_html=True)  # make sidebar fixed later
@@ -43,6 +44,17 @@ if st.button('Get random image'):
         st.image(image, width=150)
         st.write('The MNIST database contains 70,000 images of handwritten digits'
                     ' from 1 to 10.')
+        st.write("")
+        st.write("")
+
+        canvas_result = st.canvas(
+            fill_color="rgba(255, 165, 0, 0.3)",
+            stroke_width="1, 25, 3",
+            background_color="#eee",
+            update_streamlit=st.sidebar.checkbox("Update in realtime", True),
+            height=150,
+            key="full_app",
+        )
 
     with col3:
         st.write("")
