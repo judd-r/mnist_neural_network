@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_drawable_canvas import st_canvas
 import numpy as np
 import requests
 import matplotlib.pyplot as plt
@@ -28,6 +29,9 @@ div.stButton > button:first-child {
 def reversed_enumerate(a_list):
     return zip(range(len(a_list) - 1, -1, -1), a_list[::-1])
 
+col1, col2 = st.columns(1, 1)
+
+
 
 if st.button('Get random image'):
     response = requests.post(URI, data={}).json()
@@ -42,22 +46,14 @@ if st.button('Get random image'):
 
     with col2:
         st.image(image, width=150)
-        st.write('The MNIST database contains 70,000 images of handwritten digits'
-                    ' from 1 to 10.')
+        st.write('Image from the MNIST database which contains 70,000 images'
+                 ' of handwritten digits from 1 to 10.')
         st.write("")
         st.write("")
-
-        canvas_result = st.canvas(
-            fill_color="rgba(255, 165, 0, 0.3)",
-            stroke_width="1, 25, 3",
-            background_color="#eee",
-            update_streamlit=st.sidebar.checkbox("Update in realtime", True),
-            height=150,
-            key="full_app",
-        )
 
     with col3:
         st.write("")
+
 
     def layer_text(layer):
         if layer == len(preds) - 1: # reversing order below
@@ -91,3 +87,14 @@ if st.button('Get random image'):
 
         st.text(f'{layer_text(layer)} – Layer {layer + 1}')
         st.pyplot()
+
+if st.button('Draw a digit yourself'):
+
+    canvas_result = st_canvas(
+        fill_color="rgba(255, 165, 0, 0.3)",
+        stroke_width="1, 25, 3",
+        background_color="#eee",
+        update_streamlit=st.sidebar.checkbox("Update in realtime", True),
+        height=150,
+        key="full_app",
+    )

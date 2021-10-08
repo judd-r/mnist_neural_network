@@ -14,7 +14,7 @@ tensorflow-cpu
 
 # visualisation, web server
 streamlit
-streamlit-drawable-canvas
+streamlit_drawable_canvas
 
 # tests/linter
 pytest
