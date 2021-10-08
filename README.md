@@ -1,15 +1,18 @@
 # Project description
-Link: xxx
+Link: https://mnist-neural-network.herokuapp.com/
 
-This project visualises all layers of a Tensorflow Neural Network model predicting handwritten digits from the MNIST dataset.
+This project visualises all layers of a Tensorflow Neural Network model predicting
+- images of handwritten digits from the MNIST dataset
+- digits that users can draw themselves
 
 
 Stack:
-Python, Jupyter
-Flask
-Streamlit
-Git
-Heroku
+Python, Jupyter<br>
+Tensorflow <br>
+Flask <br>
+Streamlit, Streamlit Drawable Canvas <br>
+Git <br>
+Heroku <br>
 
 
 
@@ -18,6 +21,5 @@ Attribution: Coursera guided project by Amit Yadav
 
 # Setup and install
 
-Run the project:
-CLI: python ml_server.py
-      streamlit run app.py
+Clone the repo <br>
+Install modules with cli command make install_requirements <br>
