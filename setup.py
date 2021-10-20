@@ -7,10 +7,9 @@ requirements = [x.strip() for x in content if 'git+' not in x]
 
 setup(name='mnist_neural_network',
       version="1.0",
-      description="Project Description",
+      description="MNIST Neural Network",
       packages=find_packages(),
       install_requires=requirements,
-      test_suite='tests',
       # include_package_data: to install data from MANIFEST.in
       include_package_data=True,
       scripts=['scripts/mnist_neural_network-run'],

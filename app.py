@@ -3,7 +3,7 @@ import numpy as np
 import requests
 import matplotlib.pyplot as plt
 
-URI = 'http://127.0.0.1:5000/' #currently my model server
+URI = 'http://127.0.0.1:5000/' #model server
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 #st.get_option('theme.backgroundColor')
@@ -12,15 +12,15 @@ st.title('MNIST dataset – ML prediction')
 st.subheader('Visualising hidden layers in a Neural Network')
 st.sidebar.write("")
 st.sidebar.markdown("<h2 style='text-align: center;'>Image input</h2>",
-                    unsafe_allow_html=True)  # make sidebar fixed later
+                    unsafe_allow_html=True)
 
 st.markdown("""
-<style>
-div.stButton > button:first-child {
-    background-color: rgba(252, 203, 3, 0.77);
-    color: rgba(7, 7, 7, 0.9);
-}
-</style>""",
+            <style>
+            div.stButton > button:first-child {
+                background-color: rgba(252, 203, 3, 0.77);
+                color: rgba(7, 7, 7, 0.9);
+            }
+            </style>""",
             unsafe_allow_html=True)
 
 
@@ -42,7 +42,7 @@ if st.button('Get random image'):
     with col2:
         st.image(image, width=150)
         st.write('The MNIST database contains 70,000 images of handwritten digits'
-                    ' from 1 to 10.')
+                    ' from 0 to 9.')
 
     with col3:
         st.write("")
@@ -77,5 +77,5 @@ if st.button('Get random image'):
         plt.subplots_adjust(wspace=0.05, hspace=0.05)
         plt.tight_layout()
 
-        st.text(f'{layer_text(layer)} – Layer {layer + 1}')
+        st.text(f'{layer_text(layer)} (Layer {layer + 1})')
         st.pyplot()
