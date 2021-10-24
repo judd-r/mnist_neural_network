@@ -21,5 +21,5 @@ Attribution: Coursera guided project by Amit Yadav
 # Setup and install
 
 - Clone the repo <br>
-- Install packages with the cli command make install_requirements <br>
--
+- Install packages with the cli command *make install_requirements* <br>
+- build on Heroku with the cli command *git push heroku main*
